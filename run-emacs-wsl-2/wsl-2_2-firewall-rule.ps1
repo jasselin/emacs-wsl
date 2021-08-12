@@ -17,7 +17,7 @@ $programname = 'C:\program files\vcxsrv\vcxsrv.exe'
 $localport = 6000
 
 # Get the remote ip.
-$remoteip = wsl -d Ubuntu-20.04 bash -c "ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
+$remoteip = wsl -d Ubuntu bash -c "ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 $remoteipfound = $remoteip -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 if( !$remoteipfound ){
   Write-Output "The Script exited, the remote ip address cannot be found";
@@ -25,7 +25,7 @@ if( !$remoteipfound ){
 }
 
 ## Get the local ip.
-$localip = wsl -d Ubuntu-20.04 bash -c 'ip route | awk ''/default via /'' | cut -d'' '' -f3'
+$localip = wsl -d Ubuntu bash -c 'ip route | awk ''/default via /'' | cut -d'' '' -f3'
 $localipfound = $localip -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 if( !$localipfound ){
   Write-Output "The Script Exited, the local ip address cannot be found";

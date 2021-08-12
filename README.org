@@ -77,7 +77,7 @@ If you already have been using another Linux distribution you might want to
 set Ubuntu 20.04 as default. Open PowerShell and run:
 
 #+BEGIN_SRC fundamental
-  wsl --set-default Ubuntu-20.04
+  wsl --set-default Ubuntu
 #+END_SRC
 
 * Install Emacs 27.2
@@ -363,7 +363,7 @@ To change the default path to =~=:
     {
         ...
         "source": "Windows.Terminal.Wsl",
-        "startingDirectory": "//wsl$/Ubuntu-20.04/home/<username>/"
+        "startingDirectory": "//wsl$/Ubuntu/home/<username>/"
     },
   #+END_SRC
 
